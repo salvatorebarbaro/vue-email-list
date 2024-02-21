@@ -6,7 +6,7 @@ createApp({
     data() {
         return {
 
-
+            emails:[],
 
         }
     },
@@ -15,10 +15,11 @@ createApp({
         
         for(let i = 0; i<10 ;i++)
         {
-            // .then significa poi
+            // .then significa poi mettiamo una arrow function per definire l'elemento e non la finestra
             axios.get('https://flynn.boolean.careers/exercises/api/random/mail').then((email) =>
             {
-                console.log(email)
+                this.emails.push(email)
+                console.log(this.emails[i])
             })
         }
         
